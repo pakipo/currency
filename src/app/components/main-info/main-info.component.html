@@ -1,0 +1,7 @@
+
+  <div class="content" *ngIf="currencyRates">
+    <ng-container *ngFor="let currency of currencyRates">
+      <app-mainInfoCard [currency]="currency"></app-mainInfoCard>
+    </ng-container>
+  </div>
+

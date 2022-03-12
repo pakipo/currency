@@ -1,0 +1,45 @@
+.container {
+  width: 300px;
+  height: 250px;
+  background-color: #ffffff;
+  border-radius: 15px;
+  padding: 20px;
+  color: #000000;
+  -webkit-box-shadow: 0px 0px 14px 6px rgba(219, 211, 211, 0.6) inset;
+  -moz-box-shadow: 0px 0px 14px 6px rgba(219, 211, 211, 0.6) inset;
+  box-shadow: 0px 0px 14px 6px rgba(219, 211, 211, 0.6) inset;
+  margin: 0 auto;
+
+  h2 {
+    text-align: center;
+    color: #1c7e1b;
+  }
+
+  p {
+    text-align: center;
+    padding: 5px 0;
+  }
+
+  hr {
+    margin: 10px 0;
+  }
+
+  .name {
+    font-weight: 600;
+    letter-spacing: 1px;
+  }
+
+  .rate {
+    span {
+      font-weight: 550;
+
+      &.up {
+        color: green;
+      }
+
+      &.down {
+        color: red;
+      }
+    }
+  }
+}

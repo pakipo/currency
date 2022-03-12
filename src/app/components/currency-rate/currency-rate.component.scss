@@ -1,0 +1,70 @@
+.container {
+  h3 {
+    text-align: center;
+    color: #2d9800;
+    letter-spacing: 2px;
+  }
+
+  .ratesList {
+
+    .bank {
+      width: 300px;
+      height: 300px;
+      background: rgb(226,248,215);
+      background: linear-gradient(120deg, rgba(226,248,215,1) 6%, rgba(255,255,255,1) 17%, rgba(255,255,255,1) 83%, rgba(226,248,215,1) 94%);
+      -webkit-box-shadow: 0px 6px 20px 16px rgba(34, 60, 80, 0.3);
+      -moz-box-shadow: 0px 6px 20px 16px rgba(34, 60, 80, 0.3);
+      box-shadow: 0px 6px 20px 16px rgba(34, 60, 80, 0.3);
+      padding: 25px 50px;
+      border-radius: 12px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+
+      .logo {
+        width: 150px;
+        height: 50px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+      }
+
+      .buySale {
+        margin: 10px 0;
+
+        .buy, .sale {
+          p {
+            font-weight: bold;
+            text-align: center;
+          }
+
+          span {
+            font-weight: 550;
+
+            &.up {
+              color: green;
+            }
+
+            &.down {
+              color: red;
+            }
+          }
+        }
+
+        .sale {
+          margin-top: 30px;
+        }
+      }
+
+      .toBank {
+        margin-top: 30px;
+
+        a {
+          text-decoration: none;
+          color: black;
+        }
+      }
+    }
+  }
+}

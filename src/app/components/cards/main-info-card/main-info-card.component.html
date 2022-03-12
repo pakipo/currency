@@ -1,0 +1,16 @@
+<div class="container" (click)="goToCurrencyRate()">
+  <h2>{{currency['Cur_Abbreviation']}}</h2>
+  <hr />
+  <p class="name">{{currency['Cur_Name']}}</p>
+  <p>Курс НБРБ:</p>
+  <p class="rate">
+    <span> {{currency['Cur_Abbreviation'] }} </span>{{currency[ 'Cur_Scale']}}  / <span>    BYR</span>
+    <span [ngClass]="currency['Dynamics']! >= 0 ?{up:true}:{down:true}">
+      {{ currency['Cur_OfficialRate']}}
+    </span>
+    <span *ngIf="currency['Dynamics']! >= 0" class="up">	<mat-icon>arrow_drop_up</mat-icon></span>
+    <span *ngIf="currency['Dynamics']! < 0" class="down">	<mat-icon>arrow_drop_down</mat-icon></span>
+  </p>
+  <hr />
+  <p>Подробнее <span style="margin-left:15px;" ><mat-icon style="position:absolute;">arrow_forward</mat-icon></span></p>
+</div>

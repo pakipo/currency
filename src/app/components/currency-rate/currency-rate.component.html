@@ -1,0 +1,43 @@
+<div class="container" *ngIf="banks !== null">
+ 
+  <div class="ratesList" >
+  <ng-container *ngFor="let bank of banks">
+    <div class="bank" shadow>
+      <div class="logo" [style]="'background-image:url('+bank.logo+')'"> </div>
+      <h3>
+        {{ currencyName}}
+      </h3>
+
+      <div class="buySale">
+        <div class="buy">
+          <p>Покупка:</p>
+          <span> {{currencyName}} </span>{{scale}}  / <span>    BYR</span>
+          <span [ngClass]=" dinamics >= 0 ?{up:true}:{down:true}">
+            {{ getCurrency(bank,'_in')}}
+          </span>
+          <span *ngIf=" dinamics >= 0" class="up">	<mat-icon>arrow_drop_up</mat-icon></span>
+          <span *ngIf=" dinamics < 0" class="down">	<mat-icon>arrow_drop_down</mat-icon></span>
+        </div>
+        <div class="sale">
+          <p>Продажа:</p>
+          <span> {{currencyName}} </span>{{scale}}  / <span>    BYR</span>
+          <span [ngClass]=" dinamics >= 0 ?{up:true}:{down:true}">
+            {{ getCurrency(bank,'_out')}}
+          </span>
+          <span *ngIf=" dinamics >= 0" class="up">	<mat-icon>arrow_drop_up</mat-icon></span>
+          <span *ngIf=" dinamics < 0" class="down">	<mat-icon>arrow_drop_down</mat-icon></span>
+
+        </div>
+      </div>
+    
+    
+
+       
+
+      <div class="toBank">
+        <a [href]="bank.Url">В банк <mat-icon style="position:absolute;">arrow_forward</mat-icon></a>
+      </div>
+    </div>
+  </ng-container>
+  </div>
+</div>
