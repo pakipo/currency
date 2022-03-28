@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 
-import { concatMap, map } from 'rxjs/operators';
+import { concat, concatMap, concatMapTo, map } from 'rxjs/operators';
 import { from, BehaviorSubject } from 'rxjs';
 import {
   ICurrency,
@@ -108,9 +108,49 @@ export class banksService {
           'Url': 'https://belarusbank.by/',
           'currency': currency
         })
-      })
-    ).subscribe(res => {
-      this.$banks.next(this.banks)}
+        return this.apiService.alfaBankRate()
+      },
+        (er: any) => { return this.apiService.alfaBankRate() }
+      ),
+      concatMap((res) => {
+        res.subscribe(rates => {
+          let currency:Array<any> = []
+          let arrRate = rates as {rates: Array<any>};
+           arrRate['rates'].map(curr => {
+            if (curr['buyIso'] === 'BYN') {
+              currency.push(
+                {
+                  'name': curr['sellIso'],
+                  '_in': curr['sellRate'],
+                  '_out': curr['buyRate']
+                }
+              )
+            } else {
+              currency.push(
+                {
+                  'name': curr['sellIso'] + ' / ' + curr['buyIso'],
+                  '_in': curr['sellRate'],
+                  '_out': curr['buyRate']
+                })
+            }
+          })
+          this.banks.push({
+              'Banks_name': "Альфа-Банк",
+              'logo': this.imgPath + 'alfabank.jpg',
+              'Url': 'https://www.alfabank.by/',
+              'currency': currency
+          })
+          console.log(this.banks)
+        })
+        return ''
+      },
+        err => {return ''})
+    ).subscribe(() => {
+      this.$banks.next(this.banks)
+    },
+      err => {
+        this.$banks.next(this.banks)
+      }
     )
 
   }

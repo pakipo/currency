@@ -6,6 +6,9 @@
   }
 
   .ratesList {
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(310px,1fr));
+    grid-row-gap: 20px;
 
     .bank {
       width: 300px;

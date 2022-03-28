@@ -4,11 +4,13 @@
     "\\src",
     "\\src\\app",
     "\\src\\app\\components",
-    "\\src\\app\\components\\cards",
-    "\\src\\app\\components\\cards\\main-info-card",
+    "\\src\\app\\components\\currency-rate",
     "\\src\\app\\components\\main-info",
-    "\\src\\app\\shared"
+    "\\src\\app\\shared",
+    "\\src\\app\\shared\\interfaces",
+    "\\src\\assets",
+    "\\src\\assets\\logoBanks"
   ],
-  "SelectedNode": "\\src\\app\\components\\cards\\main-info-card\\main-info-card.component.ts",
+  "SelectedNode": "\\src\\app\\components\\currency-rate\\currency-rate.component.html",
   "PreviewInSolutionExplorer": false
 }

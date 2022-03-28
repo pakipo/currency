@@ -25,5 +25,10 @@ export class ApiRequestService {
   belarusBankRate() {
   return  this.http.get('https://belarusbank.by/api/kursExchange')
   }
-  
+    // курсы альфабанк
+  alfaBankRate() {
+
+    return this.http.get('https://developerhub.alfabank.by:8273/partner/1.0.1/public/rates')
+  }
 }
+

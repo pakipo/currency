@@ -4,6 +4,7 @@ export * from './components/main-info/main-info.component'
 export * from './components/cards/main-info-card/main-info-card.component'
 export * from './components/currency-rate/currency-rate.component'
 export * from './components/preloader/preloader.component'
+export * from './components/converter/converter.component'
 
 
 //сервисы

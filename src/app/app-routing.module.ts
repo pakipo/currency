@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import {
   MainInfoComponent,
   CurrencyRateComponent,
+  ConverterComponent
 } from './index';
 
 const routes: Routes = [
@@ -10,6 +11,7 @@ const routes: Routes = [
  
   { path: 'mainInfo', component: MainInfoComponent },
   { path: 'currecyRate/:currencyName', component: CurrencyRateComponent },
+  { path: 'converter', component: ConverterComponent },
   { path: "", redirectTo: "mainInfo", pathMatch: "full" }
 ];
 

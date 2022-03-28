@@ -45,6 +45,6 @@ export class CurrencyRateComponent implements OnInit {
   getCurrency(bank: IBanks, operator: '_in' | '_out') {
     let curr = bank.currency.find(curr => {return curr.name === this.currencyName })
 
-    return curr ? curr[operator] : null
+    return curr ? curr[operator]: null
   }
 }

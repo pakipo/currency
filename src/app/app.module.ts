@@ -17,7 +17,8 @@ import {
   ApiRequestService,
   CurrencyRateComponent,
   PreloaderComponent,
-  PreloadService
+  PreloadService,
+  ConverterComponent
 } from './index';
 import { ShadowDirective } from './shared/directive/shadow.directive';
 
@@ -32,7 +33,8 @@ import { ShadowDirective } from './shared/directive/shadow.directive';
     MainInfoCardComponent,
     CurrencyRateComponent,
     PreloaderComponent,
-    ShadowDirective
+    ShadowDirective,
+    ConverterComponent
   ],
   imports: [
     BrowserModule,
