@@ -4,6 +4,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 
 //Material
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -41,6 +42,8 @@ import { ShadowDirective } from './shared/directive/shadow.directive';
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
+    ReactiveFormsModule,
+    FormsModule,
 
     //Material
     MatToolbarModule,

@@ -1,1 +1,30 @@
-<p>converter works!</p>
+<div class="container">
+  <form [formGroup]="form" (submit)="submitForm(form)">
+    <div class="buy">
+      <input type="number" value="1" formControlName="volume" />
+      <select formControlName="current">
+        <option>USD</option>
+        <option>EUR</option>
+        <option>RUB</option>
+      </select>
+    </div>
+    <p>/</p>
+    <div class="sal">
+      <select formControlName="target">
+        <option>EUR</option>
+        <option>USD</option>
+        <option>RUB</option>
+      </select>
+    </div>
+    <div class="apply">
+      <button mat-raised-button color="warn">Применить</button>
+    </div>
+  </form>
+
+  <div class="ratesList">
+    <ng-container *ngFor="let bank of banks">
+      <div class="bank" shadow>
+        <div class="logo" [style]="'background-image:url('+bank.logo+')'"> </div>
+      </div>
+    </ng-container>
+  </div>

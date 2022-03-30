@@ -1,4 +1,6 @@
+import { Route } from '@angular/compiler/src/core';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import {
   banksService,
   PreloadService
@@ -14,7 +16,8 @@ export class AppComponent implements OnInit {
   load: boolean = false;
   constructor(
     private banksService: banksService,
-  private prelodService: PreloadService
+    private prelodService: PreloadService,
+    private router: Router
   ) { }
 
   ngOnInit() {
@@ -25,6 +28,8 @@ export class AppComponent implements OnInit {
     this.banksService.allBanksInit()
  
   }
-
+  goToConverter() {
+    this.router.navigate(['converter'])
+  }
 }
 

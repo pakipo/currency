@@ -112,27 +112,45 @@ export class banksService {
       },
         (er: any) => { return this.apiService.alfaBankRate() }
       ),
+      // альфабанк
+
       concatMap((res) => {
         res.subscribe(rates => {
           let currency:Array<any> = []
           let arrRate = rates as {rates: Array<any>};
            arrRate['rates'].map(curr => {
-            if (curr['buyIso'] === 'BYN') {
-              currency.push(
-                {
-                  'name': curr['sellIso'],
-                  '_in': curr['sellRate'],
-                  '_out': curr['buyRate']
-                }
-              )
-            } else {
-              currency.push(
-                {
-                  'name': curr['sellIso'] + ' / ' + curr['buyIso'],
-                  '_in': curr['sellRate'],
-                  '_out': curr['buyRate']
-                })
-            }
+             if (curr['buyIso'] === 'BYN') {
+               currency.push(
+                 {
+                   'name': curr['sellIso'],
+                   '_in': curr['sellRate'],
+                   '_out': curr['buyRate']
+                 }
+               )
+             } else {
+               if (curr['sellIso'] === 'USD') {
+                 currency.push(
+                   {
+                     'name': curr['sellIso'] + ' / ' + curr['buyIso'],
+                     '_in': curr['sellRate'],
+                     '_out': curr['buyRate']
+                   })
+               } else if (curr['buyIso'] === 'USD') {
+                 currency.push(
+                   {
+                     'name': curr['buyIso'] + ' / ' + curr['sellIso'],
+                     '_in': curr['buyRate'],
+                     '_out': curr['sellRate']
+                   })
+               } else {
+                 currency.push(
+                   {
+                     'name': curr['buyIso'] + ' / ' + curr['sellIso'],
+                     '_in': curr['buyRate'],
+                     '_out': curr['sellRate']
+                   })
+               }
+             }
           })
           this.banks.push({
               'Banks_name': "Альфа-Банк",
